@@ -1,0 +1,409 @@
+<!doctype html>
+
+<head>
+
+  <meta charset="utf-8">
+  
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+  <title>Objets</title>
+  
+  <meta name="title" content="">
+  <meta name="description" content="">
+  
+  <meta name="google-site-verification" content=""> <!-- http://google.com/webmasters -->
+
+  <meta name="author" content="Your Name Here">
+  <meta name="Copyright" content="Copyright Your Name Here 2013. All Rights Reserved.">
+
+  <link rel="shortcut icon" href="favicon.html">
+
+  <link rel="stylesheet" href="css/mosaic.css">
+  <!--Main Stylesheet-->
+  <link rel="stylesheet" href="css/style.css">
+
+  <link rel="stylesheet" href="css/admin-all-demo.css">
+
+  <link href='http://fonts.googleapis.com/css?family=Luckiest+Guy|Bitter:700|Open+Sans:400,600,600italic' rel='stylesheet' type='text/css'>
+  <!--Load Modernizr, all other scripts are on the footer-->
+
+    
+
+<style >
+     
+#table-wrapper {
+  position:relative;
+  
+  }
+
+#table-scroll {
+  height:400px;
+  width: 950px;
+  overflow:auto;  
+  margin-top:10px;
+  }
+
+#table-wrapper table {
+  width:100%;
+
+  }
+
+#table-wrapper table * {
+  background:transparent ;
+  color:white;
+  border: solid #c5db3b 2px;
+  }
+
+#table-wrapper table thead th .text {
+  position:absolute;   
+  top:0px;
+  z-index:2;
+  height:50px;
+  width:50%;
+  border:1px solid red;
+  }
+  /*
+#dataTable {
+    background-color: white;
+        color: black;
+  
+}*/
+
+#dataTable th {
+    text-align:center; 
+    vertical-align:middle;
+    font-size: 30px;
+    padding: 5px;
+
+}
+
+#dataTable td {
+    
+    vertical-align:middle;
+
+   
+}
+
+#dataTable .td1{
+  width:600px;
+}
+
+#dataTable .td1 img{
+  padding: 0;
+  width:100px;
+ 
+}
+
+#dataTable td.td2{
+  width: 360px;
+}
+
+#dataTable td.td2 input.td22{
+  border-color: rgba(0,0,0,0); 
+  font-size: 20px; 
+  height: 50px;
+  width:200px;
+  text-align:center; 
+  
+}
+
+#dataTable td.td2 select.td22
+{
+border-color: rgba(0,0,0,0); 
+height: 50px;
+width: 200px;
+font-size: 20px;
+padding: 5px;
+ 
+
+}
+
+
+#dataTable td.td2 select.td22 option 
+{
+  color: black;
+   text-align:center; 
+}
+
+
+</style>
+
+
+<script src="js/modernizr-1.7.min.js"></script>
+
+  
+
+</head>
+
+<body id="homepage">
+
+<!--Header Section-->
+<header>
+  <div class="container_16 clearfix">
+    <div class="grid_16" id="logo" style="text-align: center;">
+      <a href="#">
+        <img src="css/images/logo.png" alt="" width="310" height="62"/>
+      </a>
+    </div>
+  </div><!--//container-->
+</header>
+<!--//Header Section-->
+
+
+<div class="slider">
+  <div class="slide slide-1">
+    <img src="css/images/placeholders/slider_2.jpg"  />
+
+
+
+    <div class="cta_text bitter" style="margin-top: -650px;" >
+      
+<br><br><br><br>
+
+      <div class="panel-body" style="margin-left: -150px; " >
+                   <button type="button" class="btn btn-success" style="background-color:#c5db3b;" onclick="addRow('dataTable')">Ajouter</button>
+                    <button type="button" class="btn btn-danger" onclick="deleteRow('dataTable')">Supprimer</button>
+                  
+                    <button type="button" class="btn btn-info" onclick="sacADos('dataTable')">Valider Choix</button> 
+                  
+                    <!--  <button type="button" class="btn btn-info" onclick="sacBluf()">Valider Choix</button> -->
+                         <label style="margin-left: 170px" id="vMax"> Valeur Max  :   </label> 
+                          <label style="margin-left: 20px" id="vMaxValeur">    </label> 
+      </div>
+
+
+      <div id="table-wrapper">
+         <div id="table-scroll">
+           <table id="dataTable" >
+              <thead>
+                  <tr>
+                      <th></th>
+                      <th>Objet</th>
+                      <th>Poids</th>
+                      <th>Prendre</th>
+                      <th>Supprimer</th>
+                  </tr>
+              </thead>
+
+              <tbody>
+                <tr id="tr1">
+
+            
+                    <td class="td2">
+                        <input type="text" id="input1" class="form-control td22" placeholder="Saisir le nom de l'objet" >
+                    </td>
+            
+                    <td class="td2">
+                        <input type="number" min="0" id="poids1" class="form-control td22" placeholder="Saisir le poids">
+                    </td>
+            
+                    <td class="td2">
+                        <input type="number" min="0" id="prix1" class="form-control td22" placeholder="Saisir le prix">
+                    </td>
+            
+                    <td class="td2">
+                        <input type="checkbox" class="form-control" onclick="func(this)">
+                    </td>
+                </tr>
+                <tr id="tr2">
+                  
+          
+                  <td class="td2">
+                      <input type="text" id="input1" class="form-control td22" placeholder="Saisir le nom de l'objet" >
+                  </td>
+          
+                  <td class="td2">
+                      <input type="number" min="0" id="poids1" class="form-control td22" placeholder="Saisir le poids">
+                  </td>
+          
+                  <td class="td2">
+                      <input type="number" min="0" id="prix1" class="form-control td22" placeholder="Saisir le prix">
+                  </td>
+          
+                  <td class="td2">
+                      <input type="checkbox" class="form-control" onclick="func(this)">
+                  </td>
+              </tr>
+              <tr id="tr3">
+               
+        
+                <td class="td2">
+                    <input type="text" id="input1" class="form-control td22" placeholder="Saisir le nom de l'objet" >
+                </td>
+        
+                <td class="td2">
+                    <input type="number" min="0" id="poids1" class="form-control td22" placeholder="Saisir le poids">
+                </td>
+        
+                <td class="td2">
+                    <input type="number" min="0" id="prix1" class="form-control td22" placeholder="Saisir le prix">
+                </td>
+        
+                <td class="td2">
+                    <input type="checkbox" class="form-control" onclick="func(this)">
+                </td>
+            </tr>
+            <tr id="tr4">
+              
+      
+              <td class="td2">
+                  <input type="text" id="input1" class="form-control td22" placeholder="Saisir le nom de l'objet" >
+              </td>
+      
+              <td class="td2">
+                  <input type="number" min="0" id="poids1" class="form-control td22" placeholder="Saisir le poids">
+              </td>
+      
+              <td class="td2">
+                  <input type="number" min="0" id="prix1" class="form-control td22" placeholder="Saisir le prix">
+              </td>
+      
+              <td class="td2">
+                  <input type="checkbox" class="form-control" onclick="func(this)">
+              </td>
+          </tr>
+               
+            </tbody>
+            
+
+          </table>
+        </div>
+      </div>
+
+
+     
+    </div>
+  </div>
+ 
+</div>
+
+
+
+
+<script src="../../../../ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+<script>window.jQuery || document.write("<script src='js/jquery-1.8.2.min.js'>\x3C/script>")</script>
+
+
+<script src="js/jquery.watermark.min.js"></script>
+<script src="js/mosaic.1.0.1.min.js"></script>
+<!-- Our custom functions -->
+<script src="js/functions.js"></script>
+<script src="js/admin-all-demo.js" ></script>
+
+
+<SCRIPT language="javascript">
+
+  
+function addRow(tableID) {
+    var table = document.getElementById(tableID);
+
+    // Get the number of rows in the table
+    var rowCount = table.rows.length;
+    var actual_row = rowCount;
+
+    // Insert a new row at the end of the table
+    var row = table.insertRow(rowCount);
+    row.id = "tr" + actual_row;
+
+ 
+// Cell 2: Object Name
+var cell2 = row.insertCell(0);
+cell2.classList.add("td2");
+var element2 = document.createElement("input");
+element2.type = "text";
+element2.placeholder = "Saisir le nom de l'objet";
+element2.classList.add("form-control");
+element2.classList.add("input-sm");
+element2.classList.add("m-bot15");
+element2.classList.add("td22");
+element2.classList.add("myselect");
+cell2.appendChild(element2);
+
+
+    // Cell 3: Weight
+    var cell3 = row.insertCell(1);
+    cell3.classList.add("td2");
+    var element3 = document.createElement("input");
+    element3.type = "number";
+    element3.placeholder = "Saisir le poids";
+    element3.min = "0";
+    element3.id = "poids" + actual_row;
+    element3.classList.add("form-control");
+    element3.classList.add("td22");
+    cell3.appendChild(element3);
+
+    // Cell 4: Price
+    var cell4 = row.insertCell(2);
+    cell4.classList.add("td2");
+    var element4 = document.createElement("input");
+    element4.type = "number";
+    element4.placeholder = "Saisir le prix";
+    element4.min = "0";
+    element4.id = "prix" + actual_row;
+    element4.classList.add("form-control");
+    element4.classList.add("td22");
+    cell4.appendChild(element4);
+
+    // Cell 5: Checkbox for deletion
+    var cell5 = row.insertCell(3);
+    cell5.classList.add("td2");
+    var element5 = document.createElement("input");
+    element5.type = "checkbox";
+    element5.classList.add("form-control");
+    cell5.appendChild(element5);
+}
+
+
+
+
+
+
+    function deleteRow(tableID) {
+
+
+      try {
+
+
+      var table = document.getElementById(tableID);
+      var rowCount = table.rows.length;
+      for(var i=1; i<rowCount; i++) {
+        var row = table.rows[i];
+        var chkbox = row.cells[4].childNodes[0];
+        if(null != chkbox && true == chkbox.checked) {
+         
+          table.deleteRow(i);
+          rowCount--;
+          i--;
+        }
+      }
+         }
+
+      catch(e) {
+            alert(e);
+          }
+    }   
+
+  </SCRIPT>
+
+
+
+<script >
+  
+  function change(id_select){ 
+   
+    var selected_value=id_select.options[id_select.selectedIndex].value; //valeur de option
+    var row_number =id_select.id.substring(6);  //numero du select 
+    document.getElementById('img'+row_number).src=selected_value;  //changer la vlaeur de l'image associer 
+}
+
+</script>
+
+<script src="js/sacADos.js"></script>
+</script>   
+</body>
+</html>
+
+
+
+
+
